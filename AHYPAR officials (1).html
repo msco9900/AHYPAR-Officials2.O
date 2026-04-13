@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>AHYPAR | OFFICIAL ARENA</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@600;700&display=swap');
+
+        :root {
+            --cyan: #00f2ff;
+            --magenta: #ff0055;
+            --dark: #050505;
+            --panel: rgba(255, 255, 255, 0.05);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Rajdhani', sans-serif; scroll-behavior: smooth; }
+        body { background: var(--dark); color: white; overflow-x: hidden; line-height: 1.6; }
+
+        /* Navigation */
+        nav { background: #000; padding: 15px; border-bottom: 2px solid var(--cyan); position: sticky; top: 0; z-index: 1000; display: flex; justify-content: center; gap: 15px; }
+        nav a { color: var(--cyan); text-decoration: none; font-family: 'Bebas Neue'; font-size: 1.2rem; }
+
+        /* Hero */
+        .hero {
+            height: 75vh;
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.95)), 
+                        url('https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJueW94bmZ6Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6Z3R/l41lTfO3yJjH3R7bi/giphy.gif');
+            background-size: cover; background-position: center;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
+        }
+        .hero h1 { font-family: 'Bebas Neue'; font-size: 5.5rem; color: #fff; text-shadow: 0 0 20px var(--cyan); }
+        .hero p { color: var(--cyan); letter-spacing: 4px; font-size: 0.9rem; margin-bottom: 30px; }
+
+        .btn-join {
+            display: inline-block;
+            text-decoration: none;
+            padding: 18px 50px; background: var(--cyan); color: #000; border: none;
+            font-family: 'Bebas Neue'; font-size: 1.8rem; font-weight: bold; cursor: pointer;
+            clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%); transition: 0.3s;
+        }
+
+        .container { padding: 60px 20px; }
+        .sec-title { font-family: 'Bebas Neue'; font-size: 3.2rem; color: var(--cyan); margin-bottom: 30px; border-left: 8px solid var(--magenta); padding-left: 15px; }
+
+        .about-wrap { background: var(--panel); padding: 35px; border-radius: 20px; border: 1px solid #222; margin-bottom: 50px; }
+        .about-wrap h3 { font-family: 'Bebas Neue'; font-size: 2.2rem; color: var(--magenta); margin-bottom: 15px; }
+
+        /* Updated Game Grid with Side Buttons */
+        .game-grid { display: grid; gap: 35px; margin-bottom: 50px; }
+        .game-item { display: flex; flex-direction: column; gap: 15px; background: var(--panel); padding: 15px; border-radius: 20px; border: 1px solid #222; }
+        .game-card { 
+            height: 200px; border-radius: 15px; overflow: hidden; position: relative;
+            background-size: cover; background-position: center; border: 1px solid #333;
+        }
+        .overlay { position: absolute; inset: 0; background: linear-gradient(transparent, rgba(0,0,0,1)); display: flex; flex-direction: column; justify-content: flex-end; padding: 15px; }
+        .overlay h4 { font-family: 'Bebas Neue'; font-size: 2rem; }
+        
+        .btn-tournament {
+            text-decoration: none;
+            display: block; text-align: center;
+            padding: 12px; background: transparent; color: var(--cyan); border: 2px solid var(--cyan);
+            font-family: 'Bebas Neue'; font-size: 1.1rem; letter-spacing: 1px; transition: 0.3s;
+            border-radius: 8px;
+        }
+        .btn-tournament:hover { background: var(--cyan); color: #000; }
+
+        /* Advice Section */
+        .advice-section { background: var(--panel); padding: 35px; border-radius: 20px; border: 1px solid #333; margin-top: 50px; }
+        .advice-section h2 { font-family: 'Bebas Neue'; font-size: 2.5rem; color: var(--magenta); margin-bottom: 15px; }
+        .advice-form input, .advice-form textarea {
+            width: 100%; background: #000; border: 1px solid #444; color: #fff;
+            padding: 15px; margin-bottom: 15px; border-radius: 10px; font-size: 1rem;
+        }
+        .btn-submit {
+            width: 100%; padding: 15px; background: var(--magenta); color: #fff; border: none;
+            font-family: 'Bebas Neue'; font-size: 1.5rem; cursor: pointer; border-radius: 10px;
+        }
+
+        .mgmt-card { background: var(--panel); padding: 20px; border-radius: 12px; margin-bottom: 15px; border-left: 6px solid var(--cyan); }
+        footer { background: #000; padding: 60px 20px; text-align: center; border-top: 1px solid #222; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#about">ABOUT</a>
+        <a href="#games">ARENA</a>
+        <a href="#mgmt">TEAM</a>
+        <a href="#contact">CONTACT</a>
+    </nav>
+
+    <header class="hero">
+        <h1>AHYPAR</h1>
+        <p>THE NEXT GEN MOBILE ESPORTS</p>
+        <a href="https://discord.com/invite/kyv3NZebp3" target="_blank" class="btn-join">JOIN DISCORD</a>
+    </header>
+
+    <main class="container">
+        <section id="about">
+            <h2 class="sec-title">OUR MISSION</h2>
+            <div class="about-wrap">
+                <h3>BEYOND JUST GAMING</h3>
+                <p>Welcome to <b>AHYPAR ESPORTS</b>, the most aggressive and professionally managed mobile gaming arena. We build careers for rising E-sports stars. Our platform is dedicated to providing a fair environment for players who want to dominate.</p>
+                <p>By joining our official server, you gain access to <b>Daily Scrims, Weekly Mega Tournaments, and Special Roleplay Events</b>.</p>
+            </div>
+        </section>
+
+        <section id="games">
+            <h2 class="sec-title">ACTIVE ARENAS</h2>
+            <div class="game-grid">
+                <div class="game-item">
+                    <div class="game-card" style="background-image: url('https://lh3.googleusercontent.com/u/0/d/1VDj-42mNDrIy0zZXnl4I2YdJIyqsYyi3=w1000?authuser=0');">
+                        <div class="overlay"><h4>BGMI MOBILE</h4></div>
+                    </div>
+                    <a href="https://discord.com/invite/kyv3NZebp3" target="_blank" class="btn-tournament">JOIN DISCORD FOR ATTEND TOURNAMENT</a>
+                </div>
+
+                <div class="game-item">
+                    <div class="game-card" style="background-image: url('https://lh3.googleusercontent.com/u/0/d/1WXsIdQGFsf6ezCqUCDMtGHxx2Q6jpMsi=w1000?authuser=0');">
+                        <div class="overlay"><h4>FREE FIRE</h4></div>
+                    </div>
+                    <a href="https://discord.com/invite/kyv3NZebp3" target="_blank" class="btn-tournament">JOIN DISCORD FOR ATTEND TOURNAMENT</a>
+                </div>
+
+                <div class="game-item">
+                    <div class="game-card" style="background-image: url('https://lh3.googleusercontent.com/u/0/d/1vbSHA8aKQwCs47Va4LgBVLKzbimg7syg=w1000?authuser=0');">
+                        <div class="overlay"><h4>GRAND MOBILE</h4></div>
+                    </div>
+                    <a href="https://discord.com/invite/kyv3NZebp3" target="_blank" class="btn-tournament">JOIN DISCORD FOR ATTEND TOURNAMENT</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="mgmt">
+            <h2 class="sec-title">LEADERSHIP</h2>
+            <div class="mgmt-card"><span>Founder / Owner</span><h4>Conor Yadav</h4></div>
+            <div class="mgmt-card"><span>Co-Founder</span><h4>Sanu Rajput</h4></div>
+            <div class="mgmt-card" style="border-color: var(--magenta);"><span>Chief Developer / DCA</span><h4>Shafin Mirza</h4></div>
+        </section>
+
+        <section id="contact" class="advice-section">
+            <h2>ADVICE & QUESTIONS</h2>
+            <p style="margin-bottom: 20px; color: #aaa;">Have any suggestions or questions for AHYPAR? Send us a message.</p>
+            <div class="advice-form">
+                <input type="text" id="userName" placeholder="Your Name" required>
+                <textarea id="userMsg" rows="4" placeholder="Type your advice or question here..." required></textarea>
+                <button class="btn-submit" onclick="sendMail()">SUBMIT MESSAGE</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p style="opacity: 0.5;">&copy; 2026 AHYPAR ESPORTS | DESIGNED BY SHAFIN MIRZA</p>
+    </footer>
+
+    <script>
+        function sendMail() {
+            const name = document.getElementById('userName').value;
+            const msg = document.getElementById('userMsg').value;
+            
+            if(name === "" || msg === "") {
+                alert("Please fill in both fields!");
+                return;
+            }
+
+            const subject = encodeURIComponent("Advice/Question from " + name);
+            const body = encodeURIComponent("Name: " + name + "\n\nMessage: " + msg);
+            
+            window.location.href = `mailto:shafinmirza59@gmail.com?subject=${subject}&body=${body}`;
+        }
+
+        function joinDiscord() {
+            window.open("https://discord.com/invite/kyv3NZebp3", "_blank");
+        }
+
+        // Auto-fix for all anchor tags
+        document.querySelectorAll('a').forEach(link => {
+            link.setAttribute('target', '_blank');
+            link.setAttribute('rel', 'noopener noreferrer');
+        });
+    </script>
+</body>
+</html>
