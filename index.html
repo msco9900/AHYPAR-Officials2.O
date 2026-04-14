@@ -141,6 +141,13 @@
         }
 
         .mgmt-card { background: var(--panel); padding: 20px; border-radius: 12px; margin-bottom: 15px; border-left: 6px solid var(--cyan); }
+
+        /* Rating System CSS */
+        .rating { display: flex; flex-direction: row-reverse; justify-content: center; gap: 10px; margin: 15px 0; }
+        .rating input { display: none; }
+        .rating label { cursor: pointer; width: 30px; height: 30px; background: #222; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; color: #555; transition: 0.3s; }
+        .rating input:checked ~ label, .rating label:hover, .rating label:hover ~ label { background: var(--cyan); color: #000; box-shadow: 0 0 10px var(--cyan); }
+
         footer { background: #000; padding: 60px 20px; text-align: center; border-top: 1px solid #222; }
     </style>
 </head>
@@ -158,8 +165,6 @@
         <p>THE NEXT GEN MOBILE ESPORTS</p>
         <a href="https://discord.com/invite/kyv3NZebp3" target="_blank" class="btn-join">JOIN DISCORD</a>
         <br /> 
-           
-           
            
        <br><br><a href="https://msco9900.github.io/AHYPAR-Tournament-Registration-2.O/" target="_blank" class="btn-join">Registration</a>            
     </header>
@@ -192,9 +197,6 @@
                 <p>Welcome to <b>AHYPAR ESPORTS</b>, the most aggressive and professionally managed mobile gaming arena. We build careers for rising E-sports stars. Our platform is dedicated to providing a fair environment for players who want to dominate.</p>
                 <p>By joining our official server, you gain access to <b>Daily Scrims, Weekly Mega Tournaments, and Special Roleplay Events <br>
                 
-               
-              
-       
      <h3>About Us</h3>
   AHYPAR ESPORTS is the ultimate battlefield for the next generation of mobile gaming champions. We believe that mobile gaming is not just a hobby but a serious career path for talented players. Our platform provides a professional and fair environment for the entire gaming community, ensuring that skill and dedication are always rewarded.<br>
   
@@ -252,10 +254,31 @@ Under the technical leadership of Shafin Mirza and the guidance of Conor Yadav,S
                 <button class="btn-submit" onclick="sendMail()">SUBMIT MESSAGE</button>
             </div>
         </section>
+
+        <section class="advice-section" style="border-color: var(--cyan); margin-top: 50px;">
+            <h2 style="color: var(--cyan);">WEBSITE FEEDBACK</h2>
+            <p style="margin-bottom: 20px; color: #aaa;">Shafin Mirza has successfully built this website. How was your experience?</p>
+            
+            <form action="https://formspree.io/f/xgorelrw" method="POST" class="advice-form">
+                <input type="hidden" name="_subject" value="Website Experience Feedback">
+                
+                <label style="display: block; text-align: center; color: var(--cyan); font-family: 'Bebas Neue'; font-size: 1.2rem;">RATE YOUR EXPERIENCE (OPTIONAL)</label>
+                <div class="rating">
+                    <input type="radio" name="Rating" value="5" id="star5"><label for="star5">★</label>
+                    <input type="radio" name="Rating" value="4" id="star4"><label for="star4">★</label>
+                    <input type="radio" name="Rating" value="3" id="star3"><label for="star3">★</label>
+                    <input type="radio" name="Rating" value="2" id="star2"><label for="star2">★</label>
+                    <input type="radio" name="Rating" value="1" id="star1"><label for="star1">★</label>
+                </div>
+
+                <textarea name="Feedback" rows="3" placeholder="Describe your experience here (Optional)..."></textarea>
+                <button type="submit" class="btn-submit" style="background: var(--cyan); color: #000;">SEND FEEDBACK</button>
+            </form>
+        </section>
     </main>
 
     <footer>
-        <p style="opacity: 0.5;">&copy; 2026 AHYPAR ESPORTS | DESIGNED BY SHAFIN MIRZA</p>
+        <p style="opacity: 0.5;">© 2026 AHYPAR ESPORTS | DESIGNED BY SHAFIN MIRZA</p>
     </footer>
 
    <script>
